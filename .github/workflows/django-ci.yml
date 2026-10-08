@@ -45,6 +45,11 @@ jobs:
       if: steps.cache-deps.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
 
-    # 6. Exécuter les tests Django à la racine
+    # NOUVEAU 🚀 6. Vérifier la qualité du code avec Ruff
+    - name: Lint code with Ruff
+      run: poetry run ruff check .
+
+    # 7. Exécuter les tests Django à la racine (ne se lancera que si Ruff est OK)
     - name: Run Tests
       run: poetry run python manage.py test
+
