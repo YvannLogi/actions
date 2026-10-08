@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         # On utilise des versions stables et récentes de Python
-        python-version: ["3.10", "3.11"]
+        python-version: ["3.14"]
 
     steps:
     # 1. Télécharger le code du dépôt sur le serveur d'évaluation
